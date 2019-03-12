@@ -1,0 +1,20 @@
+<div ng-hide='editSwitch'>
+<div class='col-md-10 todo-title'>
+{{project.title}}
+</div>
+<div class='col-md-1 todo-control text-center'>
+<span class='glyphicon glyphicon-pencil' ng-click='edit(this)'></span>
+|
+<span class='glyphicon glyphicon-trash' ng-click='deleteProject(project)'></span>
+</div>
+</div>
+<div ng-show='editSwitch'>
+<form ng-submit='updateProject(this)'>
+<div class='col-md-10 todo-title'>
+<input class='form-control edit-input' ng-model='title' type='text'>
+</div>
+<div class='col-md-1 todo-control text-center'>
+<span class='glyphicon glyphicon-ok' ng-click='updateProject(this)'></span>
+</div>
+</form>
+</div>

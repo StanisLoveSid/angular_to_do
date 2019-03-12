@@ -1,0 +1,17 @@
+<div ng-controller='TaskCtrl'>
+<div class='task-head'>
+<div class='col-md-1 text-center'>
+<span class='glyphicon glyphicon-plus'></span>
+</div>
+<form ng-submit='createTask(this)'>
+<div class='input-group'>
+<input class='form-control' ng-model='taskTitle' placeholder='Start typing here to create a task...' required type='text'>
+<span class='input-group-btn'>
+<button class='btn btn-task' type='submit'>
+Add Task
+</button>
+</span>
+</div>
+</form>
+</div>
+</div>

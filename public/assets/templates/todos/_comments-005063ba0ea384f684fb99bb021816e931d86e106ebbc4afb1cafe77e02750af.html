@@ -1,0 +1,25 @@
+<span ng-controller='CommentCtrl'>
+<span class='glyphicon glyphicon-comment' ng-click='commentsSwitch = !commentsSwitch'></span>
+<span ng-show='commentsSwitch'>
+<div class='comments-container'>
+<div class='comment' ng-repeat='comment in task.comments | orderBy: &#39;created_at&#39;'>
+<span class='glyphicon glyphicon-menu-right'></span>
+{{comment.title}}
+<span class='glyphicon glyphicon-floppy-disk' ng-click='fileSwitch = !fileSwitch'></span>
+<span class='glyphicon glyphicon-trash' ng-click='deleteComment(this)'></span>
+<p ng-show='comment.attachment.url'>
+<a ng-href='{{comment.attachment.url}}' target='_blank'>Attachment</a>
+</p>
+<span ng-show='fileSwitch'>
+<input nv-file-select type='file' uploader='createUploader(this)'>
+<span ng-show='item.isUploading'>Uploading...</span>
+</span>
+<hr>
+</div>
+<form class='form-inline' ng-submit='createComment(this)'>
+<input class='form-control comment-edit' ng-model='commentTitle' placeholder='Type here to add comment...' required type='text'>
+<span class='glyphicon glyphicon-ok' ng-click='createComment(this)'></span>
+</form>
+</div>
+</span>
+</span>

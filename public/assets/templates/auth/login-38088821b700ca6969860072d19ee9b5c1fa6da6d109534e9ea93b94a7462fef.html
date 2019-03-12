@@ -1,0 +1,27 @@
+<form class='auth-form' ng-submit='login()'>
+<div class='form-head'>
+Log In
+</div>
+<div class='form-body'>
+<flash-message class='auth'></flash-message>
+<div class='form-group'>
+<label class='control-label' for='email'>
+Enter your email
+</label>
+<input class='form-control' id='email' ng-model='user.email' placeholder='Email' required type='email'>
+</div>
+<div class='form-group'>
+<label class='control-label' for='password'>
+Password
+</label>
+<input class='form-control' id='password' ng-model='user.password' placeholder='Password' required type='password'>
+</div>
+<input class='btn btn-primary' type='submit' value='Log in'>
+Don't have an Account?
+<a ui-sref='register'>Sign Up</a>
+<a class='btn btn-block btn-social btn-facebook center-block' href='/users/auth/facebook'>
+<span class='fa fa-facebook'></span>
+Sign in with Facebook
+</a>
+</div>
+</form>

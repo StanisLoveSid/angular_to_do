@@ -1,0 +1,32 @@
+<ul>
+<li ng-repeat='task in project.tasks | orderBy: &#39;position&#39;'>
+<div class='task-container container'>
+<div class='col-md-1 text-center task-status'>
+<input ng-click='updateStatus(this)' ng-model='task.done' type='checkbox'>
+</div>
+<div ng-hide='editSwitch'>
+<div class='col-md-9 task-text'>
+<span ng-class='task.done ? &#39;done&#39; : &#39;&#39;'>
+{{task.title}}
+</span>
+<span ng-include='&#39;todos/_datepicker.html&#39;'></span>
+<span ng-include='&#39;todos/_comments.html&#39;'></span>
+</div>
+<div class='col-md-2 text-center task-control'>
+<span class='glyphicon glyphicon-triangle-top' ng-click='reorderTask(this, &#39;up&#39;)'></span>
+<span class='glyphicon glyphicon-triangle-bottom' ng-click='reorderTask(this, &#39;down&#39;)'></span>
+<span class='glyphicon glyphicon-pencil' ng-click='edit(this)'></span>
+<span class='glyphicon glyphicon-trash' ng-click='deleteTask(this)'></span>
+</div>
+</div>
+<div ng-show='editSwitch'>
+<div class='col-md-9 task-text'>
+<textarea class='form-control' ng-model='title' rows='1'></textarea>
+</div>
+<div class='col-md-2 text-center task-control'>
+<span class='glyphicon glyphicon-ok' ng-click='updateTitle(this)'></span>
+</div>
+</div>
+</div>
+</li>
+</ul>

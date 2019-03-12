@@ -1,0 +1,12 @@
+<span ng-class='task.deadline ? &#39;deadline&#39; : &#39;glyphicon glyphicon-calendar&#39;' ng-click='pickDate(this)'>
+{{task.deadline | date : 'mediumDate'}}
+</span>
+<span ng-show='dateSwitch'>
+<datepicker date-format='mediumDate'>
+<input class='form-control text-center' ng-model='date' placeholder='Choose a date' readonly type='text'>
+<span class='glyphicon glyphicon-ok' ng-click='updateDate(this, date)'></span>
+<span ng-show='task.deadline'>
+<span class='glyphicon glyphicon-trash' ng-click='updateDate(this, &#39;&#39;)'></span>
+</span>
+</datepicker>
+</span>

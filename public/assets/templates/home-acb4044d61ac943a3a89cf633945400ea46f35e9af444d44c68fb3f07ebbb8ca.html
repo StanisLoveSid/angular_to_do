@@ -1,0 +1,23 @@
+<button class='btn btn-danger btn-xs sign-out' ng-click='logout()'>
+<span class='glyphicon glyphicon-log-out'></span>
+Log Out
+</button>
+<div class='todo' ng-repeat='project in projects | orderBy: &#39;created_at&#39;'>
+<div class='todo-head container'>
+<div class='col-md-1 todo-title text-center'>
+<span class='glyphicon glyphicon-list-alt'></span>
+</div>
+<div ng-include='&#39;todos/_project_title.html&#39;'></div>
+</div>
+<div ng-controller='TaskCtrl'>
+<span ng-include='&#39;todos/_task_form.html&#39;'></span>
+<span ng-include='&#39;todos/_tasks.html&#39;'></span>
+</div>
+</div>
+<button class='btn btn-primary add-list center-block' ng-click='createProject()'>
+<span class='glyphicon glyphicon-plus'></span>
+Add TODO List
+</button>
+<div class='bottom-left'>
+<flash-message></flash-message>
+</div>
