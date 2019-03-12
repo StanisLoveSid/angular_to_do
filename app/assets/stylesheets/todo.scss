@@ -1,0 +1,39 @@
+.todo {
+  margin-top: 40px;
+}
+
+.todo-head {
+  background: -webkit-linear-gradient(top, #5587bf, #3863a0);
+  color: white;
+  border: 1px solid #000000;
+  font-size: 20px;
+  padding: 6px 0px;
+}
+
+.todo-title, .todo-control {
+  padding: 0px;
+  overflow-wrap: break-word;
+}
+
+.todo-control {
+  color: rgba(255, 255, 255, .4);
+  cursor: default;
+}
+
+.glyphicon-pencil, .glyphicon-trash, .glyphicon-ok {
+  cursor: pointer;
+  font-size: 15px;
+  color: rgba(255, 255, 255, .4);
+  &:hover {
+    color: white;
+  }
+}
+
+.glyphicon-ok {
+  font-size: 20px;
+}
+
+.edit-input {
+  height: 28px;
+  font-size: inherit;
+}

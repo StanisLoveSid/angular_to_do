@@ -1,0 +1,13 @@
+%div{"ng-hide": "editSwitch"}
+  %div.col-md-10.todo-title
+    {{project.title}}
+  %div.col-md-1.todo-control.text-center
+    %span.glyphicon.glyphicon-pencil{"ng-click": "edit(this)"}
+    |
+    %span.glyphicon.glyphicon-trash{"ng-click": "deleteProject(project)"}
+%div{"ng-show": "editSwitch"}
+  %form{"ng-submit": "updateProject(this)"}
+    %div.col-md-10.todo-title
+      %input.form-control.edit-input{"ng-model": "title", type: "text"}
+    %div.col-md-1.todo-control.text-center
+      %span.glyphicon.glyphicon-ok{"ng-click": "updateProject(this)"}

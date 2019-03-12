@@ -1,0 +1,8 @@
+%span{"ng-class": "task.deadline ? 'deadline' : 'glyphicon glyphicon-calendar'", "ng-click": "pickDate(this)"}
+  {{task.deadline | date : 'mediumDate'}}
+%span{"ng-show": "dateSwitch"}
+  %datepicker{"date-format": "mediumDate"}
+    %input.form-control.text-center{"ng-model": "date", type: "text", "placeholder": "Choose a date", readonly: true }
+    %span.glyphicon.glyphicon-ok{"ng-click": "updateDate(this, date)"}
+    %span{"ng-show": "task.deadline"}
+      %span.glyphicon.glyphicon-trash{"ng-click": "updateDate(this, '')"}

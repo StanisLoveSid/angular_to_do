@@ -1,0 +1,12 @@
+//= require angular
+//= require jquery
+//= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
+//= require angular-file-upload
+//= require angular-flash-alert
+//= require AngularDevise/lib/devise
+//= require angular-rails-templates
+//= require_tree ./templates
+//= require angular-ui-router
+//= require angularjs-datepicker
+//= require angular-loading-bar
+//= require_tree .

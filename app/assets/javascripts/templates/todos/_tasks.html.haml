@@ -1,0 +1,21 @@
+%ul
+  %li{"ng-repeat": "task in project.tasks | orderBy: 'position'"}
+    .task-container.container
+      .col-md-1.text-center.task-status
+        %input{type: "checkbox", "ng-model": "task.done", "ng-click": "updateStatus(this)"}
+      %div{"ng-hide": "editSwitch"}
+        .col-md-9.task-text
+          %span{"ng-class": "task.done ? 'done' : ''"}
+            {{task.title}}
+          %span{"ng-include": "'todos/_datepicker.html'"}
+          %span{"ng-include": "'todos/_comments.html'"}
+        .col-md-2.text-center.task-control
+          %span.glyphicon.glyphicon-triangle-top{"ng-click": "reorderTask(this, 'up')"}
+          %span.glyphicon.glyphicon-triangle-bottom{"ng-click": "reorderTask(this, 'down')"}
+          %span.glyphicon.glyphicon-pencil{"ng-click": "edit(this)"}
+          %span.glyphicon.glyphicon-trash{"ng-click": "deleteTask(this)"}
+      %div{"ng-show": "editSwitch"}
+        .col-md-9.task-text
+          %textarea.form-control{rows: 1, "ng-model": "title"}
+        .col-md-2.text-center.task-control
+          %span.glyphicon.glyphicon-ok{"ng-click": "updateTitle(this)"}

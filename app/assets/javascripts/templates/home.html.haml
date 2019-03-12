@@ -1,0 +1,17 @@
+%button.btn.btn-danger.btn-xs.sign-out{"ng-click": "logout()"}
+  %span.glyphicon.glyphicon-log-out
+  Log Out
+
+.todo{"ng-repeat": "project in projects | orderBy: 'created_at'"}
+  .todo-head.container
+    .col-md-1.todo-title.text-center
+      %span.glyphicon.glyphicon-list-alt
+    %div{"ng-include": "'todos/_project_title.html'"}
+  %div{"ng-controller": "TaskCtrl"} 
+    %span{"ng-include": "'todos/_task_form.html'"}
+    %span{"ng-include": "'todos/_tasks.html'"}
+%button.btn.btn-primary.add-list.center-block{"ng-click": "createProject()"}
+  %span.glyphicon.glyphicon-plus
+  Add TODO List
+.bottom-left
+  %flash-message

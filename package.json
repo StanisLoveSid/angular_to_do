@@ -1,0 +1,14 @@
+{
+  "name": "angular-todo",
+  "version": "1.0.0",
+  "dependencies": {
+    "bower": "1.8.0"
+  },
+  "engine": {
+    "node": "4.7.1",
+    "npm": "4.6.1"
+  },
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install"
+  }
+}

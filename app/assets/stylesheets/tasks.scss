@@ -1,0 +1,149 @@
+.task-head {
+  background: -webkit-linear-gradient(top, #eeeeee 0%,#eeeeee 100%,#cccccc 100%);
+  border: 1px solid #000000;
+  border-top: 0;
+  padding: 6px;
+}
+
+.btn-task {
+  color: white;
+  background-color: #599072;
+  height: 34px;
+  width: 100px;
+  font-size: 17px;
+  &:hover, &:focus{
+    color: white;
+    background-color: #3F6E54;
+  }
+}
+
+.task-head {
+  .glyphicon-plus {
+    color: #599072;
+    font-size: 30px;
+  }
+
+  div {
+    padding: 0;
+  }
+}
+
+.task-container {
+  padding: 0;
+  background: white;
+  border-bottom: 2px solid #CEDBD9;
+  border-right: 1px solid #000000;
+  border-left: 1px solid #000000;
+  &:hover {
+    background-color: #FCFFD6;
+    .glyphicon-calendar, .glyphicon-comment {
+      visibility: visible;
+    } 
+  }
+}
+
+.task-status {
+  padding-top: 10px;
+}
+
+.task-text {
+  padding: 10px 20px;
+  overflow-wrap: break-word;
+  border-left: 2px solid #E8B5C2;
+  border-right: 2px solid #CEDBD9;
+}
+
+.task-control {
+  padding-top: 10px;
+  color: rgba(0, 0, 0, .4);
+  font-size: 15px;
+  cursor: default;
+  .glyphicon {
+    color: rgba(0, 0, 0, .4);
+    cursor: pointer;
+    font-size: 15px;
+    &:hover {
+      color: black;
+    }
+  }
+}
+
+.glyphicon-calendar, .glyphicon-comment {
+  padding-left: 7px; 
+  color: rgba(0, 0, 0, .4);
+  cursor: pointer;
+  font-size: 15px;
+  visibility: hidden;
+  &:hover {
+    color: black;
+  }
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li:last-child {
+  .task-container {
+    border-bottom: 1px solid #000000;
+    border-radius: 0px 0px 10px 10px;
+  }
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+textarea {
+   resize: vertical;
+}
+
+datepicker {
+  .form-control {
+    padding: 1px;
+    cursor: pointer;
+    height: 25px;
+    max-width: 100px;
+    display: inline-block;
+    margin-top: 7px;
+    margin-bottom: 4px;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .glyphicon-ok, .glyphicon-trash {
+    padding-left: 10px; 
+    color: rgba(0, 0, 0, .4);
+    cursor: pointer;
+    &:hover {
+      color: black;
+    }
+  }
+
+  button {
+    height: 34px;
+  }
+}
+
+.deadline {
+  margin-left: 2px;
+  display: inline-block;
+  cursor: pointer;
+  background: #337AB7;
+  border-color: #2e6da4;
+  border-radius: 4px;
+  color: #fff;
+  min-width: 60px;
+  width: auto;
+  min-height: 20px;
+  max-height: 20px;
+  font-size: 12px;
+  font-weight:bold;
+  padding: 3px;
+  &:hover {
+    background-color: #286090;
+  }
+}

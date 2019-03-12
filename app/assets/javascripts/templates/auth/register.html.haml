@@ -1,0 +1,19 @@
+%form.auth-form{"ng-submit": "register()"}
+  .form-head
+    Sign up
+  .form-body
+    %flash-message.auth
+    .form-group
+      %label.control-label{for: "email"}
+        Enter your email
+      %input.form-control{"ng-model": "user.email", placeholder: "Email", type: "email", required: true, id: "email"}
+    .form-group
+      %label.control-label{for: "password"}
+        Password
+      %input.form-control{"ng-model": "user.password", placeholder: "Password", type: "password", required: true, id: "password"}
+    %input.btn.btn-primary{type: "submit", value: "Sign up"}
+    Have an Account?
+    %a{"ui-sref": "login"} Log In
+    %a.btn.btn-block.btn-social.btn-facebook.center-block{"href": "/users/auth/facebook"}
+      %span.fa.fa-facebook
+      Sign up with Facebook

@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}
+    %title Todo List
+    = csrf_meta_tags
+    = javascript_include_tag 'application'
+    = stylesheet_link_tag    'application', media: 'all'
+  %body{"ng-app": "todoList"}
+    .row.container{"ng-controller": "AuthCtrl"}
+      .col-md-6.col-md-offset-3.test
+        %div{"ng-include": "'header.html'"}
+        %ui-view
