@@ -46,8 +46,6 @@ GEM
       railties (>= 4.2, < 6)
       sprockets (>= 3.0, < 5)
       tilt
-    angular_rails_csrf (2.1.1)
-      railties (>= 3, < 5.2)
     arel (7.1.4)
     ast (2.3.0)
     autoprefixer-rails (9.4.10.1)
@@ -71,6 +69,7 @@ GEM
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
     cliver (0.3.2)
+    coderay (1.1.2)
     concurrent-ruby (1.0.5)
     database_cleaner (1.6.1)
     devise (4.3.0)
@@ -159,9 +158,13 @@ GEM
       cliver (~> 0.3.1)
       websocket-driver (>= 0.2.0)
     powerpack (0.1.1)
+    pry (0.11.0)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
     public_suffix (2.0.5)
     puma (3.8.2)
     rack (2.0.3)
+    rack-cors (1.0.3)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.3)
@@ -288,7 +291,6 @@ PLATFORMS
 DEPENDENCIES
   acts_as_list
   angular-rails-templates
-  angular_rails_csrf
   bootstrap-sass (~> 3.4.1)
   cancancan
   capybara
@@ -310,7 +312,9 @@ DEPENDENCIES
   pg (~> 0.18)
   phantomjs
   poltergeist
+  pry
   puma (~> 3.0)
+  rack-cors
   rails (~> 5.0.3)
   rails-controller-testing
   rails-ujs (~> 0.1.0)

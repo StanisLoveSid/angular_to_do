@@ -4,7 +4,8 @@ ruby '2.4.0'
 
 gem 'acts_as_list'
 gem 'angular-rails-templates'
-gem 'angular_rails_csrf'
+# gem 'angular_rails_csrf'
+gem 'rack-cors'
 gem 'cancancan'
 gem 'carrierwave'
 gem 'devise'
@@ -46,6 +47,7 @@ group :test do
 end
 
 group :development do
+  gem 'pry'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'

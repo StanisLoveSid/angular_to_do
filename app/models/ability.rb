@@ -2,8 +2,8 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can :manage, Project, user_id: user.id
-    can :manage, Task, project: { user_id: user.id }
-    can :manage, Comment, task: { project: { user_id: user.id } }
+    can :manage, Project
+    can :manage, Task
+    can :manage, Comment
   end
 end

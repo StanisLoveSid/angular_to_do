@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!
-  load_and_authorize_resource
+  # before_action :authenticate_user!
+  load_resource
 
   def create
     if @comment.save
@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    @comment.attachment = params[:file]
+    @comment.attachment = params[:attachment]
     if @comment.save
       render json: @comment.attachment
     else
@@ -26,6 +26,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:title, :task_id)
+    params.permit(:title, :task_id)
   end
 end

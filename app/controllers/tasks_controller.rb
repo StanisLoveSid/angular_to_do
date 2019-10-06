@@ -1,12 +1,18 @@
 class TasksController < ApplicationController
-  before_action :authenticate_user!
-  load_and_authorize_resource
+  # before_action :authenticate_user!
+  load_resource
 
   def create
     if @task.save
       respond_with @task
     else
       render(status: 422, json: @task.errors.full_messages)
+    end
+  end
+
+  def update_position
+    params[:positions].each do |id, index|
+      Task.find(id).update(position: index)
     end
   end
 
@@ -31,14 +37,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :project_id, :done, :deadline)
-  end
-
-  def reorder_task(direction)
-    if direction == 'down'
-      @task.move_lower
-    else
-      @task.move_higher
-    end
+    params.permit(:title, :project_id, :done, :deadline)
   end
 end
