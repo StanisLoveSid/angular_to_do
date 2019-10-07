@@ -11,8 +11,8 @@ class CommentsController < ApplicationController
   end
 
   def update
-    @comment.attachment = params[:attachment]
-    if @comment.save
+    @comment = Comment.find(params[:id])
+    if @comment.update(comment_params)
       render json: @comment.attachment
     else
       render(status: 422, json: @comment.errors.full_messages)
@@ -26,6 +26,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.permit(:title, :task_id)
+    params.permit(:title, :task_id, :attachment)
   end
 end

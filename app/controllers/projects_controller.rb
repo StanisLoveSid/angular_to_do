@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(title: params[:label])
+    @project = Project.new(title: params[:title])
     if @project.save
       respond_with @project
     else
@@ -38,6 +38,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.permit(:done, :important, :attachment, :positions)
+    params.permit(:done, :important, :attachment, :positions, :title)
   end
 end
