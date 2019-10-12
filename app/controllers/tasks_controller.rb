@@ -36,6 +36,10 @@ class TasksController < ApplicationController
 
   private
 
+  def current_user
+    User.find(session[:user_id]) if session[:user_id]
+  end
+
   def task_params
     params.permit(:title, :project_id, :done, :deadline)
   end

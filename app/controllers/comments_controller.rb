@@ -25,6 +25,12 @@ class CommentsController < ApplicationController
 
   private
 
+  private
+
+  def current_user
+    User.find(session[:user_id]) if session[:user_id]
+  end
+
   def comment_params
     params.permit(:title, :task_id, :attachment)
   end

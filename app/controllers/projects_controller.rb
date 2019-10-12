@@ -3,11 +3,11 @@ class ProjectsController < ApplicationController
   load_resource
 
   def index
-    respond_with @projects
+    respond_with(Project.where(user_id: session[:user_id]))
   end
 
   def create
-    @project = Project.new(title: params[:title])
+    @project = Project.new(project_params)
     if @project.save
       respond_with @project
     else
@@ -37,7 +37,11 @@ class ProjectsController < ApplicationController
 
   private
 
+  def current_user
+    User.find(session[:user_id]) if session[:user_id]
+  end
+
   def project_params
-    params.permit(:done, :important, :attachment, :positions, :title)
+    params.permit(:done, :important, :attachment, :positions, :title, :user_id)
   end
 end

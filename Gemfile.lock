@@ -291,6 +291,7 @@ PLATFORMS
 DEPENDENCIES
   acts_as_list
   angular-rails-templates
+  bcrypt
   bootstrap-sass (~> 3.4.1)
   cancancan
   capybara
