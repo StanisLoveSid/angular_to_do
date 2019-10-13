@@ -1,9 +1,9 @@
 class ProjectsController < ApplicationController
   # before_action :authenticate_user!
-  load_resource
+  # before_action :set_current_user
 
   def index
-    respond_with(Project.where(user_id: session[:user_id]))
+    respond_with(Project.all)
   end
 
   def create
@@ -37,8 +37,8 @@ class ProjectsController < ApplicationController
 
   private
 
-  def current_user
-    User.find(session[:user_id]) if session[:user_id]
+  def set_current_user
+    @current_user ||= User.find(session[:user_id])
   end
 
   def project_params
