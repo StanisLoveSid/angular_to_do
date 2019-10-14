@@ -1,9 +1,9 @@
 class ProjectsController < ApplicationController
   # before_action :authenticate_user!
-  # before_action :set_current_user
+  before_action :set_current_user, only: %i[index]
 
   def index
-    respond_with(Project.all)
+    respond_with(@current_user.projects)
   end
 
   def create
